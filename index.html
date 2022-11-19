@@ -6,16 +6,13 @@
     <body>
         <h1 id="a">ok</h1>
         <script>
-            function a(){
-                $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-            $.getJSON($SCRIPT_ROOT+"/_stuff",
-                function(data) {
-                    console.log(data.cpu)
-		    document.getElementById('a').innerHTML = data.cpu;
-                }
-            );
+		async function getTime(){
+                var response = await fetch("https://192.168.43.61:5000/_ok");
+                var r = await response.json();
+                console.log(r)
             }
-            setInterval(a,1000)
+            getTime()
+		    document.getElementById('a').innerHTML = r
         </script>
     </body>
 <html>

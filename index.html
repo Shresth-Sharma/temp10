@@ -8,7 +8,7 @@
         <script>
             function a(){
                 $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-            $.getJSON($SCRIPT_ROOT+"/_stuff",
+            $.getJSON("https://192.168.43.144/_stuff",
                 function(data) {
                     console.log(data.cpu)
 		    document.getElementById('a').innerHTML = data.cpu;

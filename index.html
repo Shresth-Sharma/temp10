@@ -6,6 +6,7 @@
     <body>
         <h1 id="a">ok</h1>
         <script>
+		var r = 0;
 		async function getTime(){
                 var response = await fetch("https://192.168.216.61:5000/_ok");
                 var r = await response.json();

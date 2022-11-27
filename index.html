@@ -11,7 +11,7 @@
                 	var response = await fetch("https://192.168.216.61:5000/_ok");
                 	var r = await response.json();
                 	console.log(r)
-			return r + ''
+			return String(r)
            	}
 		setInterval(a,1000)
             	getTime()
